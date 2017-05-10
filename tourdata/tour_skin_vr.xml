@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.19">
+
+    
+  <!-- Spot Style - Default Point Spot Style -->
+  <style name="IconDefaultPointSpotStyle"
+         url="%FIRSTXML%/spots/hotspot_neutral_sequence_user_defaultpoint0.png"
+         visible="false"
+         frame="0"
+         lastframe="15"
+         framewidth="60"
+         frameheight="60"
+         stopspotsequence="false"
+         crop="0|0|60|60"
+
+         onloaded="startspotanimation(0.1);"
+
+         height="60"
+         width="60"
+         />
+
+
+
+
+
+
+    
+  <!-- Spot Style - text spot -->
+  <style name="Icontextspot"
+         url="%FIRSTXML%/spots/trans_user_defaultpoint1.png"
+         visible="false"
+         rotate="90"
+
+         onover="onoverIcontextspot"
+         onout="onoutIcontextspot"
+
+         height="10"
+         width="10"
+         />
+
+
+  <action name="onoverIcontextspot">
+tween(scale, 1.2);
+
+
+  </action>
+
+  <action name="onoutIcontextspot">
+    tween(scale, 1);
+
+
+  </action>
+
+
+
+  <action name="enableGyroscope">
+    changeGyroscopeState(true);
+  </action>
+  <action name="disableGyroscope">
+    changeGyroscopeState(false);
+  </action>
+
+
+  <!-- Hide / Show Controls -->
+  <action name="hideTourControls">set(tour_displaycontrols, false);events.dispatch(hidetourcontrols);</action>
+  <action name="showTourControls">set(tour_displaycontrols, true); events.dispatch(showtourcontrols);</action>
+
+
+</krpano>
