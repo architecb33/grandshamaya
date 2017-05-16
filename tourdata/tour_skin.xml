@@ -371,53 +371,12 @@ tween(scale, 1.2);
   <action name="showbutton2">if(tour_displaycontrols,set(layer[button2].visible, true);,hidebutton2(););</action>
 
 
-<!-- ********** -->
-<!-- Gallery Button -->
-<!-- id : button4 -->
-<!-- ********** -->
-
-  <layer name="button4"
-         keep="true"
-         url="%FIRSTXML%/graphics/button4/buttonbrochure.png" 
-         align="topleft"
-         x="0"
-         y="230"
-         zorder="8"
-         visible="false"
-         onclick="button4OnClick"
-         alpha="0.7"
-         onout="tween(alpha,0.7,0.5,easeOutQuad);"
-         onover="tween(alpha,1.0,0.5,easeOutQuad);"
-         height="60"
-         width="200"
-         />
-  <action name="button4OnClick">openurl(gallery.html,_self);
-
-
-  </action>
-
-  <events name="button4events" 
-    hidetourcontrols="hidebutton4();" 
-    showtourcontrols="showbutton4();" 
-    keep="true" />
-  <action name="hidebutton4">set(layer[button4].visible, false);</action>
-  <action name="showbutton4">if(tour_displaycontrols,set(layer[button4].visible, true);,hidebutton4(););</action>
-
-
-  <action name="enableGyroscope">
-    changeGyroscopeState(true);
-  </action>
-  <action name="disableGyroscope">
-    changeGyroscopeState(false);
-  </action>
-
-
 	<!-- WebVR plugin for VR availability tests -->
 
 	<plugin name="ptpvrmode" devices="html5" keep="true"
 		url="%FIRSTXML%/graphics/webvr.js"
 		mobilevr_support="true"
-		mobilevr_fake_support="false"
+		mobilevr_fake_support="true"
 		vr_cursor=""
 		vr_cursor_enabled="false"
 		onavailable="delayedcall(1, checkVrAvailability(););"
@@ -442,6 +401,14 @@ tween(scale, 1.2);
   <!-- Hide / Show Controls -->
   <action name="hideTourControls">set(tour_displaycontrols, false);events.dispatch(hidetourcontrols);</action>
   <action name="showTourControls">set(tour_displaycontrols, true); events.dispatch(showtourcontrols);</action>
+
+
+  <action name="enableGyroscope">
+    changeGyroscopeState(true);
+  </action>
+  <action name="disableGyroscope">
+    changeGyroscopeState(false);
+  </action>
 
 
 </krpano>

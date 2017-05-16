@@ -53,17 +53,17 @@ tween(scale, 1.2);
 
 
 
+  <!-- Hide / Show Controls -->
+  <action name="hideTourControls">set(tour_displaycontrols, false);events.dispatch(hidetourcontrols);</action>
+  <action name="showTourControls">set(tour_displaycontrols, true); events.dispatch(showtourcontrols);</action>
+
+
   <action name="enableGyroscope">
     changeGyroscopeState(true);
   </action>
   <action name="disableGyroscope">
     changeGyroscopeState(false);
   </action>
-
-
-  <!-- Hide / Show Controls -->
-  <action name="hideTourControls">set(tour_displaycontrols, false);events.dispatch(hidetourcontrols);</action>
-  <action name="showTourControls">set(tour_displaycontrols, true); events.dispatch(showtourcontrols);</action>
 
 
 </krpano>
